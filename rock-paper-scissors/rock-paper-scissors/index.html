@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rock Paper Scissors</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="game">
+  <header class="top">
+    <div>
+      <h1>ROCK PAPER SCISSORS</h1>
+      <p class="sub">Challenge the Computer!</p>
+    </div>
+    <div class="tools">
+      <button id="muteBtn" class="icon-btn" aria-label="Mute sound" aria-pressed="false">🔊</button>
+      <button id="themeBtn" class="icon-btn" aria-label="Switch to light theme">🌙</button>
+    </div>
+  </header>
+
+  <p class="how">Pick rock, paper or scissors (or press <kbd>R</kbd>, <kbd>P</kbd>, <kbd>S</kbd>). Rock beats scissors, scissors beat paper, paper beats rock.</p>
+
+  <section class="scoreboard" aria-label="Scoreboard">
+    <div class="stat"><span>Your Score</span><b id="winsEl">0</b></div>
+    <div class="stat"><span>Computer</span><b id="lossesEl">0</b></div>
+    <div class="stat"><span>Draws</span><b id="drawsEl">0</b></div>
+    <div class="stat"><span>Rounds</span><b id="roundsEl">0</b></div>
+    <div class="stat"><span>Win Rate</span><b id="rateEl">0%</b></div>
+    <div class="stat"><span>Streak</span><b id="streakEl">0</b></div>
+  </section>
+
+  <section class="arena" aria-label="Game area">
+    <div class="side" id="userSide"><div class="hand" id="userHand">❔</div><span>You</span></div>
+    <div class="vs" id="vsEl">VS</div>
+    <div class="side" id="compSide"><div class="hand" id="compHand">❔</div><span>Computer</span></div>
+  </section>
+
+  <section class="result" id="result" aria-live="polite">
+    <h2 id="resultTitle">Make your move</h2>
+    <p id="resultText">Choose below to start the round.</p>
+    <p id="seriesEl" class="series" hidden></p>
+    <button id="againBtn" class="again" hidden>Play Again</button>
+  </section>
+
+  <section class="choices" aria-label="Your choices">
+    <button class="choice" data-choice="rock"><span>🪨</span>Rock</button>
+    <button class="choice" data-choice="paper"><span>📄</span>Paper</button>
+    <button class="choice" data-choice="scissors"><span>✂️</span>Scissors</button>
+  </section>
+
+  <section class="modes">
+    <label><input type="checkbox" id="bo5"> Best of 5</label>
+    <label><input type="checkbox" id="auto"> Auto Play</label>
+    <button id="resetBtn" class="ghost">Reset Score</button>
+  </section>
+
+  <section class="history">
+    <h3>Recent Rounds</h3>
+    <table>
+      <thead><tr><th>#</th><th>You</th><th>Computer</th><th>Result</th></tr></thead>
+      <tbody id="historyBody"><tr class="empty"><td colspan="4">No rounds yet.</td></tr></tbody>
+    </table>
+  </section>
+
+  <footer>Made for fun. Ready for another round?</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
