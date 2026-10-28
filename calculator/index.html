@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basic Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="header">
+      <h1>BASIC CALCULATOR</h1>
+      <p>Simple calculations, instant results.</p>
+    </header>
+
+    <section class="card" aria-label="Calculator">
+      <div class="field">
+        <label for="number1">First number</label>
+        <input id="number1" type="text" inputmode="decimal" autocomplete="off" placeholder="0" aria-describedby="error1">
+        <p class="error" id="error1" role="alert"></p>
+      </div>
+
+      <fieldset class="field operations" aria-describedby="errorOp">
+        <legend>Operation</legend>
+        <div class="op-group">
+          <label class="op"><input type="radio" name="operation" value="+" checked><span title="Addition">+</span></label>
+          <label class="op"><input type="radio" name="operation" value="-"><span title="Subtraction">−</span></label>
+          <label class="op"><input type="radio" name="operation" value="*"><span title="Multiplication">×</span></label>
+          <label class="op"><input type="radio" name="operation" value="/"><span title="Division">÷</span></label>
+        </div>
+        <p class="error" id="errorOp" role="alert"></p>
+      </fieldset>
+
+      <div class="field">
+        <label for="number2">Second number</label>
+        <input id="number2" type="text" inputmode="decimal" autocomplete="off" placeholder="0" aria-describedby="error2">
+        <p class="error" id="error2" role="alert"></p>
+      </div>
+
+      <button id="calculateBtn" class="primary" type="button">Calculate</button>
+
+      <div class="result-panel" aria-live="polite">
+        <p class="result-label">Result</p>
+        <p id="result" class="result placeholder">—</p>
+        <p id="expression" class="expression">Enter two numbers to begin.</p>
+      </div>
+
+      <div class="actions">
+        <button id="clearBtn" class="secondary" type="button">Clear</button>
+        <button id="swapBtn" class="secondary" type="button">Swap numbers</button>
+        <button id="copyBtn" class="secondary" type="button" disabled>Copy result</button>
+      </div>
+
+      <details class="history">
+        <summary>History</summary>
+        <ul id="historyList"><li class="empty">No calculations yet.</li></ul>
+      </details>
+    </section>
+
+    <footer class="footer">Simple. Fast. Accurate.</footer>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
